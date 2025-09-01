@@ -2,116 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Extended Registration Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopEasy - E-commerce App</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f7f8;
-      padding: 20px;
+      background-color: #f8f8f8;
+      line-height: 1.6;
     }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    h2 {
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background-color: #f1c40f;
+      color: #333;
       text-align: center;
+      padding: 60px 20px;
     }
-    label {
-      margin-top: 10px;
-      display: block;
+
+    .hero h1 {
+      font-size: 40px;
     }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      background-color: #fff;
     }
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #28a745;
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .product-card .price {
+      color: #28a745;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .product-card button {
+      background-color: #007bff;
       color: white;
       border: none;
+      padding: 10px;
       border-radius: 4px;
-      font-size: 16px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #218838;
+
+    .product-card button:hover {
+      background-color: #0056b3;
     }
-    .note {
+
+    footer {
+      background-color: #333;
+      color: #fff;
       text-align: center;
-      margin-top: 15px;
-      font-size: 14px;
-      color: #666;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Register</h2>
-    <form action="submit_registration.php" method="POST" enctype="multipart/form-data">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
 
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+  <!-- Header -->
+  <header>
+    <div class="logo">ShopEasy</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Cart</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to ShopEasy</h1>
+    <p>Your one-stop shop for everything!</p>
+  </section>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
+  <!-- Products Section -->
+  <section class="products">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 1" />
+      <h3>Product 1</h3>
+      <p>Short product description goes here.</p>
+      <div class="price">$19.99</div>
+      <button>Add to Cart</button>
+    </div>
 
-      <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" name="dob" required>
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 2" />
+      <h3>Product 2</h3>
+      <p>Short product description goes here.</p>
+      <div class="price">$29.99</div>
+      <button>Add to Cart</button>
+    </div>
 
-      <label for="gender">Gender</label>
-      <select id="gender" name="gender" required>
-        <option value="">-- Select --</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 3" />
+      <h3>Product 3</h3>
+      <p>Short product description goes here.</p>
+      <div class="price">$39.99</div>
+      <button>Add to Cart</button>
+    </div>
 
-      <label for="country">Country</label>
-      <select id="country" name="country" required>
-        <option value="">-- Select --</option>
-        <option value="usa">United States</option>
-        <option value="uk">United Kingdom</option>
-        <option value="india">India</option>
-        <option value="canada">Canada</option>
-        <!-- Add more countries as needed -->
-      </select>
+    <!-- Add more products as needed -->
+  </section>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required minlength="6">
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 ShopEasy. All rights reserved.
+  </footer>
 
-      <label for="confirm-password">Confirm Password</label>
-      <input type="password" id="confirm-password" name="confirm_password" required minlength="6">
-
-      <label for="profile-picture">Upload Profile Picture</label>
-      <input type="file" id="profile-picture" name="profile_picture" accept="image/*">
-
-      <label>
-        <input type="checkbox" name="terms" required>
-        I agree to the <a href="#">terms and conditions</a>
-      </label>
-
-      <label>
-        <input type="checkbox" name="subscribe">
-        Subscribe to our newsletter
-      </label>
-
-      <button type="submit">Register</button>
-    </form>
-    <div class="note">Already have an account? <a href="login.html">Login here</a>.</div>
-  </div>
 </body>
 </html>
